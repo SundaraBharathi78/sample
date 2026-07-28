@@ -1,0 +1,16 @@
+   class Solution {
+public:
+    int removeDuplicates(vector<int>& nums) { 
+        if(nums.empty()) return 0;
+        int insertIndex = 1;   
+        // FIXED: Added 'i', changed '<=' to '<', and corrected 'num' to 'nums'
+        for (size_t i = 1; i < nums.size(); ++i){
+            if(nums[i] != nums[i - 1]) {
+                nums[insertIndex] = nums[i];
+                insertIndex++;
+            }
+        }  
+        return insertIndex;
+    }
+};
+        
